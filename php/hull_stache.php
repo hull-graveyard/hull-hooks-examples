@@ -48,15 +48,16 @@ function sendImageByMail($imageURL, $userEmail)
 }
 
 
-$payload = json_decode(file_get_contents('php://input'), true);
+$event = new Hull_Event(file_get_contents('php://input'), getenv('HULL_APP_SECRET'));
+$payload = $event->payload;
 
-if ($payload && $payload['objectType'] === 'activity' && $payload['eventName'] === 'create') {
-  $data  = $payload['data'];
-  $appId = $payload['appId'];
-  $image = $data['object'];
-  $user = findUser($image['resourceful_id']);
+if ($payload && $payload->objectType === 'activity' && $payload->eventName === 'create') {
+  $data  = $payload->data;
+  $appId = $payload->appId;
+  $image = $data->object;
+  $user = findUser($image->resourceful_id);
 
-  sendImageByMail(getImageURL($image['id']), $user->identities[0]->email);
+  sendImageByMail(getImageURL($image->id), $user->identities[0]->email);
 }
 
 exit();
