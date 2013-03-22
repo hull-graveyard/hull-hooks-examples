@@ -50,12 +50,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hull/php-sdk.git",
-                "reference": "55ad2609219b9391c505041f4febbd7809dec735"
+                "reference": "356766df8e8c5c3e7db9c443c9e5cbfc46a62de3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hull/php-sdk/zipball/55ad2609219b9391c505041f4febbd7809dec735",
-                "reference": "55ad2609219b9391c505041f4febbd7809dec735",
+                "url": "https://api.github.com/repos/hull/php-sdk/zipball/356766df8e8c5c3e7db9c443c9e5cbfc46a62de3",
+                "reference": "356766df8e8c5c3e7db9c443c9e5cbfc46a62de3",
                 "shasum": ""
             },
             "require": {
@@ -79,7 +79,7 @@
             ],
             "description": "Hull PHP SDK",
             "homepage": "http://github.com/hull/php-sdk",
-            "time": "2013-03-22 10:19:34"
+            "time": "2013-03-22 13:14:02"
         },
         {
             "name": "mandrill/mandrill",
