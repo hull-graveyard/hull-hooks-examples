@@ -35,7 +35,7 @@ function sendImageByMail($imageURL, $userEmail)
   global $mandrill;
   $msg = new Mandrill_Messages($mandrill);
   $desc = array(
-    'html' => "<img src=\"$imageURL\"/><br><a href=\"http://hull.github.com/hull-stache\">Check it out on Hull</a>",
+    'html' => "<img src=\"$imageURL\"/><br><a href=\"http://hull.github.com/hullstache\">Check it out on Hull</a>",
     'text' => "Check it out: $imageURL",
     'subject' => "You've been Hull-stached!",
     'from_email' => 'mo@hull.io',
