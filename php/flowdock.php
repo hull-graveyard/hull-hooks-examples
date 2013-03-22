@@ -61,6 +61,9 @@ if ($appId && $appSecret) {
       $name     = $payload->appName;
       $tags     = array('hull-notif', $payload->appName, $payload->objectType, $payload->eventName);
       $user     = $payload->data->user;
+      if (!$user && $payload->data->actor) {
+        $user = $payload->data->actor;
+      }
       if ($user && $user->name) {
         $subject  = $user->name;
       } else {
@@ -75,9 +78,9 @@ if ($appId && $appSecret) {
         case "create.badge":
           $content  = "A User just played at " . $payload->data->name . " his name is " . $user->name;
         case "create.user_profile":
-          $content  = "A new user just signed up to " . $payload->data->name;
+          $content  = "A new user just signed up to " . $user->name;
         case "create.image":
-          $content  = "A User just created an image " . $payload->data->name;
+          $content  = "A User just created an image " . $user->name;
       }
       Flowdock::TeamInbox($name, $subject, $content, $tags, getenv("FLOWDOCK_API_TOKEN"));
     }
