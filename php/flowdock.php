@@ -77,10 +77,13 @@ if ($appId && $appSecret) {
       switch ($key) {
         case "create.badge":
           $content  = "A User just played at " . $payload->data->name . " his name is " . $user->name;
+          break;
         case "create.user_profile":
           $content  = "A new user just signed up to " . $user->name;
+          break;
         case "create.image":
           $content  = "A User just created an image " . $user->name;
+          break;
       }
       Flowdock::TeamInbox($name, $subject, $content, $tags, getenv("FLOWDOCK_API_TOKEN"));
     }
