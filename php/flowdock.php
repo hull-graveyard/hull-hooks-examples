@@ -7,7 +7,7 @@ error_log("PING !");
 class Flowdock
 {
     public static $_URL     = 'https://api.flowdock.com/v1/messages/team_inbox/';
-    public static $_TOKEN   = 'flow-token-here';
+    public static $_TOKEN   = getenv('FLOWDOCK_API_TOKEN');
     public static $_SOURCE  = 'Hull Hooks Test';
     public static $_EMAIL   = 'notifications@hull.io';
 
@@ -86,7 +86,7 @@ if ($appId && $appSecret) {
             $content .= " with " . $user->name;
           }
       }
-
+      error_log("Sending to FLOW (" . getenv('FLOWDOCK_API_TOKEN') . "): " . $content);
       Flowdock::TeamInbox($name, $subject, $content, $tags, $_GET['token']);
     }
 
@@ -94,6 +94,8 @@ if ($appId && $appSecret) {
     error_log("Error: " . $e);
   }
 
+} else {
+  error_log("Oops... no app secret or appId ?  - appId: [" . $appId "] secret: [" . $appSecret . "]");
 }
 
 
