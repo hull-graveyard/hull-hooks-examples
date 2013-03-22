@@ -78,11 +78,6 @@ if ($appId && $appSecret) {
           $content  = "A new user just signed up to " . $payload->data->name;
         case "create.image":
           $content  = "A User just created an image " . $payload->data->name;
-        default:
-          $content = "Something just happened";
-          if ($user) {
-            $content .= " with " . $user->name;
-          }
       }
       Flowdock::TeamInbox($name, $subject, $content, $tags, getenv("FLOWDOCK_API_TOKEN"));
     }
