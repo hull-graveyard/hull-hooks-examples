@@ -7,7 +7,6 @@ error_log("PING !");
 class Flowdock
 {
     public static $_URL     = 'https://api.flowdock.com/v1/messages/team_inbox/';
-    public static $_TOKEN   = getenv('FLOWDOCK_API_TOKEN');
     public static $_SOURCE  = 'Hull Hooks Test';
     public static $_EMAIL   = 'notifications@hull.io';
 
@@ -22,9 +21,6 @@ class Flowdock
             'tags'          => $tags
         );
         $data_string = json_encode($data);
-        if (!$token && Flowdock::$_TOKEN) {
-          $token = Flowdock::$_TOKEN; 
-        }
         $ch = curl_init(Flowdock::$_URL.$token);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
@@ -87,7 +83,7 @@ if ($appId && $appSecret) {
           }
       }
       error_log("Sending to FLOW (" . getenv('FLOWDOCK_API_TOKEN') . "): " . $content);
-      Flowdock::TeamInbox($name, $subject, $content, $tags, $_GET['token']);
+      Flowdock::TeamInbox($name, $subject, $content, $tags, getenv("FLOWDOCK_API_TOKEN"));
     }
 
   } catch (Exception $e) {
@@ -95,7 +91,5 @@ if ($appId && $appSecret) {
   }
 
 } else {
-  error_log("Oops... no app secret or appId ?  - appId: [" . $appId "] secret: [" . $appSecret . "]");
+  error_log("Oops... no app secret or appId ?  - appId: [" . $appId . "] secret: [" . $appSecret . "]");
 }
-
-
