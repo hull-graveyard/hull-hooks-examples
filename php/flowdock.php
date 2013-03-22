@@ -76,13 +76,14 @@ if ($appId && $appSecret) {
           $content  = "A User just played at " . $payload->data->name . " his name is " . $user->name;
         case "create.user_profile":
           $content  = "A new user just signed up to " . $payload->data->name;
+        case "create.image":
+          $content  = "A User just created an image " . $payload->data->name;
         default:
           $content = "Something just happened";
           if ($user) {
             $content .= " with " . $user->name;
           }
       }
-      error_log("Sending to FLOW (" . getenv('FLOWDOCK_API_TOKEN') . "): " . $content);
       Flowdock::TeamInbox($name, $subject, $content, $tags, getenv("FLOWDOCK_API_TOKEN"));
     }
 
