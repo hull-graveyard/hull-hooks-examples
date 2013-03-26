@@ -12,3 +12,7 @@ A few examples of integration of [Hull Hooks](http://hull.io/docs/api/hooks) wit
 
   Mustachify your Facebook profile picture and sends it into your inbox
 
+* Install PHP dependencies
+
+  curl -sS https://getcomposer.org/installer | php
+  php composer.phar install
