@@ -84,6 +84,9 @@ if ($appId && $appSecret) {
         case "create.image":
           $content  = "A User just created an image " . $user->name;
           break;
+        case "create.comment":
+          $content  = "A User (" . $user->name . ") just created a comment";
+          break;
       }
       Flowdock::TeamInbox($name, $subject, $content, $tags, getenv("FLOWDOCK_API_TOKEN"));
     }
