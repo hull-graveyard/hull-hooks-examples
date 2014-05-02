@@ -1,70 +1,28 @@
 {
-    "hash": "b9f1e71fd06781540e9fd35806866b7a",
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "a8f3f2d03b53c205e761feef15db5cf9",
     "packages": [
         {
-            "name": "facebook/php-sdk",
-            "version": "v3.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/facebook/facebook-php-sdk.git",
-                "reference": "v3.2.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/facebook/facebook-php-sdk/zipball/v3.2.2",
-                "reference": "v3.2.2",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "php": ">=5.2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache2"
-            ],
-            "authors": [
-                {
-                    "name": "Facebook",
-                    "homepage": "https://github.com/facebook/facebook-php-sdk/contributors"
-                }
-            ],
-            "description": "Facebook PHP SDK",
-            "homepage": "https://github.com/facebook/facebook-php-sdk",
-            "keywords": [
-                "facebook",
-                "sdk"
-            ],
-            "time": "2013-01-15 21:37:15"
-        },
-        {
-            "name": "hull/hull-sdk",
+            "name": "hull/hull",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/hull/php-sdk.git",
-                "reference": "356766df8e8c5c3e7db9c443c9e5cbfc46a62de3"
+                "url": "https://github.com/hull/hull-php.git",
+                "reference": "c3f1f7e02dab73f7dbbcaf5a128bbff67e9545a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hull/php-sdk/zipball/356766df8e8c5c3e7db9c443c9e5cbfc46a62de3",
-                "reference": "356766df8e8c5c3e7db9c443c9e5cbfc46a62de3",
+                "url": "https://api.github.com/repos/hull/hull-php/zipball/c3f1f7e02dab73f7dbbcaf5a128bbff67e9545a4",
+                "reference": "c3f1f7e02dab73f7dbbcaf5a128bbff67e9545a4",
                 "shasum": ""
-            },
-            "require": {
-                "facebook/php-sdk": "*"
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "Hull": "src/"
+                    "Hull": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -75,11 +33,15 @@
                 {
                     "name": "Stephane Bellity",
                     "email": "stephane@hull.io"
+                },
+                {
+                    "name": "Xavier Cambar",
+                    "email": "xcambar@gmail.com"
                 }
             ],
             "description": "Hull PHP SDK",
-            "homepage": "http://github.com/hull/php-sdk",
-            "time": "2013-03-22 13:14:02"
+            "homepage": "http://github.com/hull/hull-php",
+            "time": "2014-04-23 13:36:37"
         },
         {
             "name": "mandrill/mandrill",
@@ -87,12 +49,12 @@
             "source": {
                 "type": "git",
                 "url": "https://bitbucket.org/mailchimp/mandrill-api-php.git",
-                "reference": "1.0.18"
+                "reference": "e1eda7352f24f87908e4fc2d63ca79255479cbb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://bitbucket.org/mailchimp/mandrill-api-php/get/1.0.18.zip",
-                "reference": "1.0.18",
+                "url": "https://bitbucket.org/mailchimp/mandrill-api-php/get/e1eda7352f24f87908e4fc2d63ca79255479cbb2.zip",
+                "reference": "e1eda7352f24f87908e4fc2d63ca79255479cbb2",
                 "shasum": ""
             },
             "require": {
@@ -106,7 +68,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "Apache-2.0"
             ],
             "authors": [
                 {
@@ -122,7 +84,7 @@
                 "api",
                 "email"
             ],
-            "time": "2013-03-15 17:27:00"
+            "time": "2014-02-07 20:15:24"
         }
     ],
     "packages-dev": [
@@ -133,7 +95,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "hull/hull-sdk": 20,
+        "hull/hull": 20,
         "mandrill/mandrill": 20
     },
     "platform": [

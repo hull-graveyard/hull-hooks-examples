@@ -1,7 +1,7 @@
 {
   "name": "hull/hook_example",
   "require": {
-    "hull/hull-sdk": "dev-master",
+    "hull/hull": "dev-master",
     "mandrill/mandrill": "dev-master"
   }
 }
