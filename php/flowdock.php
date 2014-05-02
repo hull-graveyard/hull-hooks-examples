@@ -58,8 +58,8 @@ if ($appId && $appSecret) {
     $payload = $event->payload;
 
     if ($payload && $payload->objectType) {
-      $name     = $payload->appName;
-      $tags     = array('hull-notif', $payload->appName, $payload->objectType, $payload->eventName);
+      $name     = $payload->app_name;
+      $tags     = array('hull-notif', $payload->app_name, $payload->event);
       $user     = $payload->data->user;
       if (!$user && $payload->data->actor) {
         $user = $payload->data->actor;
@@ -70,21 +70,21 @@ if ($appId && $appSecret) {
         $subject  = '';
       }
 
-      $subject .= ' : ' . $payload->eventName . ' ' . $payload->objectType;
+      $subject .= ' : ' . $payload->event;
 
-      $key = $payload->eventName . '.' . $payload->objectType;
+      $key = $payload->event;
 
       switch ($key) {
-        case "create.badge":
+        case "badge.create":
           $content  = "A User just played at " . $payload->data->name . " his name is " . $user->name;
           break;
-        case "create.user_profile":
+        case "user_profile.create":
           $content  = "A new user just signed up to " . $user->name;
           break;
-        case "create.image":
+        case "image.create":
           $content  = "A User just created an image " . $user->name;
           break;
-        case "create.comment":
+        case "comment.create":
           $content  = "A User (" . $user->name . ") just created a comment";
           break;
       }
